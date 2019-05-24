@@ -2,6 +2,7 @@ import com.sun.tools.javac.Main;
 
 public class StartClient {
     public static void main(String[]args){
-        MainWindow frame1=new MainWindow();
+//        MainWindow frame1=new MainWindow();
+        LoginWindow window1=new LoginWindow();
     }
 }
