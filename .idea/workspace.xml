@@ -2,14 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64926870-b783-4808-a265-3a2fe10a3cb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Friend.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/KonganChat/MainWindow$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/KonganChat/AccountInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KonganChat/AccountInformation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/KonganChat/ChatPanel$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KonganChat/ChatPanel$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/KonganChat/ChatPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KonganChat/ChatPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/KonganChat/ChatPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KonganChat/ChatPanel$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/KonganChat/ChatPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KonganChat/ChatPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/KonganChat/Friend.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KonganChat/Friend.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/KonganChat/LoginWindow$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KonganChat/LoginWindow$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/KonganChat/LoginWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KonganChat/LoginWindow$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/KonganChat/LoginWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KonganChat/LoginWindow$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/KonganChat/LoginWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KonganChat/LoginWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/KonganChat/MainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KonganChat/MainWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/KonganChat/MyPacket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KonganChat/MyPacket.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/KonganChat/Server$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KonganChat/Server$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/KonganChat/Server$ServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KonganChat/Server$ServerThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/KonganChat/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KonganChat/Server.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/KonganChat/StartClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KonganChat/StartClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChatPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChatPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Chatwindow1.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Chatwindow1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Friend.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LoginWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyPacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyPacket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StartClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StartClient.java" afterDir="false" />
     </list>
@@ -28,8 +45,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="78">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -38,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/src/StartServer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
-              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+              <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -47,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/src/StartClient.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="5" column="46" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+              <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -55,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LoginWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="109" column="61" selection-start-line="109" selection-start-column="61" selection-end-line="109" selection-end-column="61" />
+            <state relative-caret-position="294">
+              <caret line="108" column="35" lean-forward="true" selection-start-line="108" selection-start-column="35" selection-end-line="108" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,8 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ChatPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="82" selection-start-line="82" selection-end-line="82" />
+            <state relative-caret-position="784">
+              <caret line="112" column="28" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,61 +99,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MyPacket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+            <state relative-caret-position="-213">
+              <caret line="66" column="36" lean-forward="true" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#752#753#0" expanded="true" />
-                <element signature="e#782#783#0" expanded="true" />
-                <element signature="method#toByte#0;class#MyPacket#0" />
-                <element signature="method#decodeByte#0;class#MyPacket#0" />
-                <element signature="e#1863#1864#0" expanded="true" />
-                <element signature="e#1893#1894#0" expanded="true" />
-                <element signature="e#1944#1945#0" expanded="true" />
-                <element signature="e#1975#1976#0" expanded="true" />
-                <element signature="e#2039#2040#0" expanded="true" />
-                <element signature="e#2068#2069#0" expanded="true" />
+                <element signature="method#MyPacket#1;class#MyPacket#0" />
+                <element signature="method#MyPacket#3;class#MyPacket#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Chatwindow1.form">
-          <provider selected="true" editor-type-id="ui-designer" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="62" selection-start-line="62" selection-end-line="62" />
+            <state relative-caret-position="-803">
+              <caret line="144" column="10" selection-start-line="144" selection-start-column="10" selection-end-line="144" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;method#displayMessage#0;class#Server#0" />
-                <element signature="method#displayMessage#0;class#Server#0" />
                 <element signature="docComment;method#addAccount#0;class#Server#0" />
                 <element signature="docComment;method#addFriend#0;class#Server#0" />
                 <element signature="method#addFriend#0;class#Server#0" />
-                <element signature="docComment;method#processLoginRequest#0;class#Server#0" />
-                <element signature="method#processLoginRequest#0;class#Server#0" />
-                <element signature="e#4346#4347#0" expanded="true" />
-                <element signature="e#4399#4400#0" expanded="true" />
-                <element signature="class#AccountInformation#0" />
-                <element signature="e#3465#3466#0" expanded="true" />
-                <element signature="e#3500#3501#0" expanded="true" />
-                <element signature="e#3526#3527#0" expanded="true" />
-                <element signature="e#3557#3558#0" expanded="true" />
+                <element signature="method#getLoginStatus#0;class#Server#0" />
+                <element signature="e#5547#6176#1" />
+                <element signature="method#setCurrentPort#0;class#AccountInformation#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Friend.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.base/java/net/DatagramPacket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+            <state relative-caret-position="204">
+              <caret line="160" selection-start-line="160" selection-end-line="160" />
             </state>
           </provider>
         </entry>
@@ -151,6 +151,8 @@
     <findStrings>
       <find>chatRecord</find>
       <find>friend</find>
+      <find>socket</find>
+      <find>friends</find>
       <find>packet</find>
     </findStrings>
   </component>
@@ -164,15 +166,16 @@
         <option value="$PROJECT_DIR$/src/StartServer.java" />
         <option value="$PROJECT_DIR$/src/Chatwindow1.form" />
         <option value="$PROJECT_DIR$/src/ChatWindow.java" />
-        <option value="$PROJECT_DIR$/src/ChatPanel.java" />
-        <option value="$PROJECT_DIR$/src/MainWindow.java" />
-        <option value="$PROJECT_DIR$/src/StartClient.java" />
         <option value="$PROJECT_DIR$/src/MyDatagramPacket.java" />
         <option value="$PROJECT_DIR$/src/DatagramProcessor.java" />
         <option value="$PROJECT_DIR$/src/Friend.java" />
-        <option value="$PROJECT_DIR$/src/MyPacket.java" />
         <option value="$PROJECT_DIR$/src/LoginWindow.java" />
+        <option value="$PROJECT_DIR$/src/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/Server.java" />
+        <option value="$PROJECT_DIR$/src/MyPacket.java" />
+        <option value="$PROJECT_DIR$/src/StartClient.java" />
+        <option value="$PROJECT_DIR$/src/StartTest.java" />
+        <option value="$PROJECT_DIR$/src/ChatPanel.java" />
       </list>
     </option>
   </component>
@@ -188,7 +191,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -205,11 +207,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../课件学习" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -227,7 +230,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.StartClient">
+  <component name="RunManager" selected="Application.StartServer">
     <configuration name="StartClient" type="Application" factoryName="Application" singleton="false">
       <option name="MAIN_CLASS_NAME" value="StartClient" />
       <module name="KonganChat" />
@@ -265,26 +268,32 @@
       <option name="project" value="LOCAL" />
       <updated>1558598054559</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="空安聊--beta2">
+      <created>1558707124782</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1558707124783</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1513" height="1013" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.09484536" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.16357388" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32879817" />
-      <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.49965635" weight="0.32879817" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49965635" weight="0.32993197" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50309277" side_tool="true" weight="0.2505669" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32993197" />
       <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.2494331" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.3997735" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.31632653" />
+      <window_info anchor="bottom" x="23" y="390" width="1455" height="221" id="Run" order="6" sideWeight="0.4969072" type="FLOATING" weight="0.2505669" />
+      <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.49828178" weight="0.34920636" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" />
@@ -322,7 +331,51 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="看起来很差劲的聊天程序---《空安聊》&#10;（其实就是很差劲。。" />
-    <option name="LAST_COMMIT_MESSAGE" value="看起来很差劲的聊天程序---《空安聊》&#10;（其实就是很差劲。。" />
+    <MESSAGE value="空安聊--beta2" />
+    <option name="LAST_COMMIT_MESSAGE" value="空安聊--beta2" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LoginWindow.java</url>
+          <line>59</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/MainWindow.java</url>
+          <line>35</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ChatPanel.java</url>
+          <line>65</line>
+          <properties />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="text.getText()" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>text.getText()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>display.getText()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Chatwindow1.java">
@@ -332,45 +385,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyDatagramPacket.java" />
+    <entry file="file://$PROJECT_DIR$/src/DatagramProcessor.java" />
     <entry file="file://$PROJECT_DIR$/src/Chatwindow1.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/StartClient.java">
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.base/java/io/ObjectInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="46" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+        <state relative-caret-position="371">
+          <caret line="436" column="7" lean-forward="true" selection-start-line="436" selection-start-column="7" selection-end-line="436" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyDatagramPacket.java">
+    <entry file="file://$PROJECT_DIR$/src/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        <state relative-caret-position="78">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
           <folding>
-            <element signature="e#110#111#0" expanded="true" />
-            <element signature="e#129#130#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DatagramProcessor.java">
+    <entry file="file://$PROJECT_DIR$/src/LoginWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChatPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        <state relative-caret-position="294">
+          <caret line="108" column="35" lean-forward="true" selection-start-line="108" selection-start-column="35" selection-end-line="108" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -379,75 +419,97 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MyPacket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        <state relative-caret-position="-213">
+          <caret line="66" column="36" lean-forward="true" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#752#753#0" expanded="true" />
-            <element signature="e#782#783#0" expanded="true" />
-            <element signature="method#toByte#0;class#MyPacket#0" />
-            <element signature="method#decodeByte#0;class#MyPacket#0" />
-            <element signature="e#1863#1864#0" expanded="true" />
-            <element signature="e#1893#1894#0" expanded="true" />
-            <element signature="e#1944#1945#0" expanded="true" />
-            <element signature="e#1975#1976#0" expanded="true" />
-            <element signature="e#2039#2040#0" expanded="true" />
-            <element signature="e#2068#2069#0" expanded="true" />
+            <element signature="method#MyPacket#1;class#MyPacket#0" />
+            <element signature="method#MyPacket#3;class#MyPacket#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Friend.java">
+    <entry file="file://$PROJECT_DIR$/src/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+        <state relative-caret-position="-803">
+          <caret line="144" column="10" selection-start-line="144" selection-start-column="10" selection-end-line="144" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#displayMessage#0;class#Server#0" />
+            <element signature="docComment;method#addAccount#0;class#Server#0" />
+            <element signature="docComment;method#addFriend#0;class#Server#0" />
+            <element signature="method#addFriend#0;class#Server#0" />
+            <element signature="method#getLoginStatus#0;class#Server#0" />
+            <element signature="e#5547#6176#1" />
+            <element signature="method#setCurrentPort#0;class#AccountInformation#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoginWindow.java">
+    <entry file="file://$PROJECT_DIR$/src/ChatPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="109" column="61" selection-start-line="109" selection-start-column="61" selection-end-line="109" selection-end-column="61" />
+        <state relative-caret-position="784">
+          <caret line="112" column="28" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StartClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/StartServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server.java">
+    <entry file="file://$PROJECT_DIR$/src/Friend.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#displayMessage#0;class#Server#0" />
-            <element signature="method#displayMessage#0;class#Server#0" />
-            <element signature="docComment;method#addAccount#0;class#Server#0" />
-            <element signature="docComment;method#addFriend#0;class#Server#0" />
-            <element signature="method#addFriend#0;class#Server#0" />
-            <element signature="docComment;method#processLoginRequest#0;class#Server#0" />
-            <element signature="method#processLoginRequest#0;class#Server#0" />
-            <element signature="e#4346#4347#0" expanded="true" />
-            <element signature="e#4399#4400#0" expanded="true" />
-            <element signature="class#AccountInformation#0" />
-            <element signature="e#3465#3466#0" expanded="true" />
-            <element signature="e#3500#3501#0" expanded="true" />
-            <element signature="e#3526#3527#0" expanded="true" />
-            <element signature="e#3557#3558#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.base/java/net/DatagramPacket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="160" selection-start-line="160" selection-end-line="160" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
           <last-edited>lib</last-edited>
@@ -463,6 +525,17 @@
       <state key="JdkListConfigurable.UI">
         <settings>
           <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -1,9 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
-import java.net.SocketException;
+import java.net.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -32,7 +30,13 @@ public class Server extends JFrame {
             System.exit(1);
         }
 
-        this.addAccount("221701225","666");
+        this.addAccount("元","666");
+        addFriend("元","唱跳rap");
+        addFriend("元","鸭鸭加油");
+        this.addAccount("鸭鸭加油","asp");
+        addFriend("鸭鸭加油","元");
+        this.addAccount("唱跳rap","cxk");
+        addFriend("唱跳rap","元");
 
         this.setSize(700,700);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -96,6 +100,7 @@ public class Server extends JFrame {
      */
     void addAccount(String account1,String password1){
         AccountInformation accountInfo=new AccountInformation(password1);
+        accountInfo.setCurrentPort(-1);
         accounts.put(account1,accountInfo);
     }
 
@@ -105,15 +110,21 @@ public class Server extends JFrame {
      * @param account2 等待被添加的人的账号
      */
     void addFriend(String account1,String account2){
-
+        AccountInformation accountInfo=accounts.get(account1);
+        if(accountInfo==null){
+            System.out.println("找不到账号1(发起添加好友请求的账号");
+        }
+        else{
+            accountInfo.addFriend(account2);
+        }
     }
 
     /** 处理客户端发起的登录请求
      * @param packet 带有登录请求信息的数据包
      * @return  登录信息验证成功返回true，验证失败返回false
      */
-    boolean processLoginRequest(MyPacket packet){
-        AccountInformation accountInfo=accounts.get(packet.getAccount());    //尝试从服务器的Hashmap中获得账户信息
+    boolean getLoginStatus(MyPacket packet, InetAddress address,int port){
+        AccountInformation accountInfo=accounts.get(packet.getAccount());    //尝试从服务器的 Hashmap中获得账户信息
         if(accountInfo==null){
             System.out.println("登陆失败，服务器中找不到该账号");
             return false;
@@ -140,13 +151,16 @@ public class Server extends JFrame {
         @Override
         public void run() {
             MyPacket receiveData=MyPacket.decodeByte(receivePacket.getData());
-            int type=receiveData.getStatus();
+            int type=receiveData.getStatus();     //获取数据报类型
+
+            /** 数据报类型：登录请求 */
             if(type==0){
                 displayMessage(receivePacket,receiveData.getAccount()+"请求登录");
 
                 boolean loginState;
-                loginState=processLoginRequest(receiveData);
+                loginState=getLoginStatus(receiveData,receivePacket.getAddress(),receivePacket.getPort());
 
+                /**登录失败*/
                 if(loginState==false){
                     //构造返回的datagramPacket对象
                     MyPacket myPacket=new MyPacket(2);
@@ -161,12 +175,26 @@ public class Server extends JFrame {
                         System.out.println("服务器发送数据报时出现问题");
                     }
                 }
+                /** 登录成功*/
                 else{
                     AccountInformation accountInfo=accounts.get(receiveData.getAccount());
+
+                    //记录该账号登录所用的端口号，为以后转发信息做准备
+                    accountInfo.setCurrentPort(receivePacket.getPort());
                     //把服务器存有好友信息的vector转为Friends数组后，存在数据报中返回
                     int friendsNumber=accountInfo.friends.size();
                     System.out.println("这个账号好友数量为"+friendsNumber+"\n");
-                    MyPacket myPacket=new MyPacket(1,accountInfo.friends.toArray(new Friend[friendsNumber]));
+
+                    /***以下调试用*/
+
+//                    System.out.println("这个账号的朋友有：");
+//                    for(String str:friends){
+//                        System.out.println(str);
+//                    }
+                    /** 以上调试用 */
+                    String []friends=accountInfo.friends.toArray(new String[friendsNumber]);
+                    MyPacket myPacket=new MyPacket(1,friends);
+//
                     byte[] data2=MyPacket.toByte(myPacket);
                     DatagramPacket responsePacket=new DatagramPacket(data2,data2.length,receivePacket.getAddress(),
                             receivePacket.getPort());
@@ -179,8 +207,55 @@ public class Server extends JFrame {
                     }
                 }
             }
-            else{
-                System.out.println("未处理的数据包类型");
+            /** 数据报类型：向好友发送的信息 */
+            else if(type==3){
+                String destination=receiveData.getDestination();    //信息目的地
+                String origin=receiveData.getOrigin();              //信息源头
+                displayMessage(receivePacket,origin+"向"+destination+"发送了信息");
+
+                AccountInformation accountInfo = accounts.get(destination);
+                if(accountInfo==null){
+                    displayMessage(receivePacket,"在服务器中找不到接收对象");
+                }
+                /**接收对象当前不在线 */
+                else if(accountInfo.getCurrentPort()==-1){
+                    displayMessage(receivePacket,"接受对象当前不在线，发送失败");
+                    MyPacket myPacket=new MyPacket(5);
+                    byte[] data2=MyPacket.toByte(myPacket);
+
+                    try {
+                        DatagramPacket sendPacket = new DatagramPacket(data2,data2.length, InetAddress.getLocalHost(),
+                                                            receivePacket.getPort());
+                        socket.send(sendPacket);
+                    } catch (UnknownHostException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        System.out.println("错误信息回传失败");
+                        e.printStackTrace();
+                    }
+
+
+                }
+                /** 满足要求 正常转发 */
+                else{
+                    int destinationPort=accountInfo.getCurrentPort();
+                    MyPacket myPacket=new MyPacket(4,origin,receiveData.getMessage());
+                    byte[] data2=MyPacket.toByte(myPacket);
+                    try {
+                        DatagramPacket sendPacket=new DatagramPacket(data2,data2.length,InetAddress.getLocalHost(),
+                                                                    destinationPort);
+
+                        socket.send(sendPacket);
+                    } catch (UnknownHostException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        System.out.println("转发信息时发生错误");
+                        e.printStackTrace();
+                    }
+                    displayMessage(receivePacket,"信息已发往"+destination);
+                }
+//                displayMessage(receivePacket,);
+//                System.out.println("未处理的数据包类型");
             }
 
         }
@@ -190,18 +265,29 @@ public class Server extends JFrame {
 /** 存有某个账号的密码，以及好友的名称和端口号 */
 class AccountInformation{
     String password;
-    Vector<Friend> friends;
+    int currentPort;
+    Vector<String> friends;
     AccountInformation(String password1){
         password=password1;
+        currentPort=-1;     //未更新时端口号为-1，表示该用户不在线
         friends=new Vector<>();
     }
-    void addFriend(Friend person){
+    void addFriend(String person){
         friends.add(person);
     }
     String getPassword(){
         return password;
     }
+    /** 设置用户当前端口号 */
+    int setCurrentPort(int port){
+        currentPort=port;
+        return currentPort;
+    }
 
+    /** 返回该用户当前端口号 */
+    int getCurrentPort(){
+        return currentPort;
+    }
 }
 
 

@@ -19,11 +19,15 @@ public class ChatPanel extends JPanel {
     JTextArea display=new JTextArea("聊天记录\n");
 //    JPanel friend=new JPanel();
     DatagramSocket socket;
+    String username;
+    String chattingFriend;
     StringBuffer chatRecord=new StringBuffer();
 
-    ChatPanel(){
+    ChatPanel(DatagramSocket socket1,String username1,String friend1){
         this.setLayout(new BorderLayout());
-
+        socket=socket1;
+        username=username1;
+        chattingFriend=friend1;
 
         //添加组件(及设置）之----输入框，回车按钮（都放在一个名为Textfield的JPane中
         Font font1=new Font("黑体",Font.PLAIN,28);
@@ -43,41 +47,9 @@ public class ChatPanel extends JPanel {
         display.setFont(new Font("黑体",Font.PLAIN,18));
         display.setBackground(new Color(239, 248, 243));
 
-        //添加组件（及设置）之----好友列表JList
-//        friend.setFont(new Font("宋体",Font.BOLD,16));
-//        friend.setBackground(new Color(210, 241, 248));
-//        this.add(new JScrollPane(friend),BorderLayout.EAST);
-//        friend.setLayout(new GridLayout(15,1));
-//        friend.setPreferredSize(new Dimension(180, 525));
-//        friend.add(new JButton("叶尤澎"));
-//
-//        friend.add(new JButton("叶尤澎"));
-//        friend.add(new JButton("叶尤澎"));
-//        friend.add(new JButton("叶尤澎"));
-//        friend.add(new JButton("叶尤澎"));
-//        friend.add(new JButton("叶尤澎"));
-//        friend.add(new JButton("叶尤澎"));
-//        friend.add(new JButton("叶尤澎"));
-//        friend.add(new JButton("叶尤澎"));
-//        friend.add(new JButton("叶尤澎"));
-//        friend.add(new JButton("叶尤澎"));
-
-//        JButton friend1=new JButton("工作两年半的偶像管理员鸭鸭");
-//        friend1.setSize(70,35);
-//        friend1.setFont(new Font("微软雅黑",Font.PLAIN,13));
-//        friend1.setBackground(new Color(219, 241, 249));
-//        friend1.setMargin(new Insets(0,0,0,15));
-//        friend.add(friend1);
-//        Random r=new Random();
-        //创建发送、接收数据的socket
-        try {
-            socket=new DatagramSocket(5001);
-        } catch (SocketException e) {
-            e.printStackTrace();
-            System.out.println("创建socket时出现问题");
-        }
         addSendListenr(enter);
-        addReceiveListener(display);
+
+//        addReceiveListener(display);
 
         this.setSize(700,700);
         this.setVisible(true);
@@ -94,13 +66,19 @@ public class ChatPanel extends JPanel {
                         try {
                             //把输入的数据发送给服务器
                             String message=text.getText();
-                            byte[]data =message.getBytes();
+                            MyPacket myPacket=new MyPacket(3,username,chattingFriend,message+"\n");
+                            byte[]data =MyPacket.toByte(myPacket);
                             DatagramPacket sendPacket=new DatagramPacket(data,data.length,InetAddress.getLocalHost(),5000);
                             socket.send(sendPacket);
+                            System.out.println("给好友的第一个包已发送");
+                            socket.send(sendPacket);
+                            System.out.println("给好友的第二个包已发送");
 
-                            //在自己的文本框中显示输入的数据
-                            display.append("        "+message);
-                            Thread.sleep(50);
+                            //在自己的文本框中显示输入的信息
+                            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+                            display.append(username+" "+df.format(new Date())+"\n");
+                            display.append(message+"\n");
+                          text.setText("");
                         }
                         catch (UnknownHostException ex) {
                             //获取网络地址错误
@@ -108,9 +86,6 @@ public class ChatPanel extends JPanel {
                         }
                         catch (IOException ex) {
                             //发送消息时出错
-                            ex.printStackTrace();
-                        } catch (InterruptedException ex) {
-
                             ex.printStackTrace();
                         }
                     }
@@ -120,44 +95,26 @@ public class ChatPanel extends JPanel {
         Thread thread=new Thread(r);
         thread.start();
     }
-    /** 单独开一个线程接收并展示收到的信息 */
-    void addReceiveListener(JTextArea display){
-        Runnable r= new Runnable() {
-            @Override
-            public void run() {
-                while(true){
-                    byte[] data=new byte[100];
-                    DatagramPacket receivePacket=new DatagramPacket(data,data.length);
-
-                    //接收数据包
-                    try {
-                        socket.receive(receivePacket);
-                    } catch (IOException e) {
-                        System.out.println("接收数据包时出现问题");
-                        e.printStackTrace();
-                    }
-
-                    //在display组件上添加接收到的信息
-                    String newMessage=new String(receivePacket.getData(),0,receivePacket.getLength());
-                    display.append(newMessage+"\n");
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    //为了方便调试，在控制台输出内容
-                    displayMessage(receivePacket);
-                }
-            }
-        };
-        Thread thread=new Thread(r);
-        thread.start();
-    }
-    void displayMessage(DatagramPacket receivePacket){
-
+    /** 接收并展示mainWindow传来的信息 */
+    void showMessage(String message){
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-        System.out.println(df.format(new Date())+"     FROM port："+receivePacket.getPort());// new Date()为获取当前系统时间
-        System.out.println(("  "+new String(receivePacket.getData(),0,receivePacket.getLength())));
+        SwingUtilities.invokeLater(
+                new Runnable()
+                {
+                    public void run() // updates displayArea
+                    {
+
+                        display.append(chattingFriend+" "+df.format(new Date())+"\n");// new Date()为获取当前系统时间
+                        display.append(message+"\n");
+//                        eventLog.append("  "+new String(receivePacket.getData(),0,receivePacket.getLength())+"\n");
+                    } // end method run
+                });
+    }
+    /** 单独开一个线程接收并展示收到的信息 */
+
+    void displayMessage(String message){
+
+
     }
 
 //    void addFriend(

@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.*;
+import java.util.Random;
 
 public class LoginWindow extends JFrame {
 //    JPanel accountField=new JPanel();
@@ -15,7 +16,7 @@ public class LoginWindow extends JFrame {
     JButton enter=new JButton("登录");
     Font loginFont=new Font("微软雅黑",Font.PLAIN,18);
     DatagramSocket socket;
-
+    int currentPort=-1;
     LoginWindow(){
         this.setTitle("空安聊----登录");
         GridLayout layout = new GridLayout(5,1);
@@ -41,13 +42,30 @@ public class LoginWindow extends JFrame {
         this.add(enter);
         enter.setBackground(new Color(226, 242, 249));
         enter.setFont(new Font("微软雅黑",Font.PLAIN,20));
-        try {
-            socket=new DatagramSocket();
-        } catch (SocketException e) {
-            e.printStackTrace();
-            System.out.println("创建socket的时候出现问题");
-        }
 
+        /** 用随机指定的端口进行连接，直到成功为止 */
+//        while(true) {
+//            try {
+//                Random random = new Random();
+        try {
+            socket = new DatagramSocket();
+            currentPort=socket.getLocalPort();
+            System.out.println("socket创建成功,绑定端口号为"+socket.getLocalPort()+",currentPort="+currentPort);
+        } catch (SocketException e) {
+            System.out.println("创建socket失败");
+            e.printStackTrace();
+        }
+//
+//                //socket定义成功则记录下使用的端口号
+//                System.out.println("socket申请成功");
+//                currentPort=socket.getPort();
+//                break;
+//            } catch (SocketException e) {
+//                e.printStackTrace();
+//                System.out.println("端口号已被占用，准备测试下一个随机端口号");
+//                continue;
+//            }
+//        }
         addSendThread(enter);
         addReceiveThread();
 
@@ -92,7 +110,7 @@ public class LoginWindow extends JFrame {
             @Override
             public void run() {
                 while(true){
-                    byte[] data=new byte[200];
+                    byte[] data=new byte[512];
                     DatagramPacket receivePacket=new DatagramPacket(data,data.length);
 
                     try {
@@ -107,7 +125,8 @@ public class LoginWindow extends JFrame {
                     if(status==1){
                         JOptionPane.showMessageDialog(null,"登录成功！");
                         dispose();
-                        MainWindow window = new MainWindow();
+                        MainWindow window = new MainWindow(socket,myPacket.getFriends(),accountText.getText());
+                        System.out.println(myPacket.getFriends());
                     }
                     else if(status==2){
                         JOptionPane.showMessageDialog(null,"登陆失败！");
